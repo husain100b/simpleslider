@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Slider</title>
+
+	<style>
+		body {
+		  margin: 0;
+		  padding: 0;
+		}
+
+		h1 {
+		  font-family: Sans-serif;
+		  text-align: center;
+		  margin: 0;
+		  padding: 50px 0 0;
+		  color: #fff;
+		  font-size: 30px;
+		  text-transform: uppercase;
+		}
+
+		section {
+		  width: 100vw;
+		  height: 100vh;
+		  text-align: center;
+		  background: #f1c40f;
+		}
+
+		img {
+		  
+		  margin-top: 100px;
+		  border: 5px solid #fff;
+		}
+	</style>
+
+</head>
+<body>
+	
+
+	<section>
+
+	  <h1>Simple JavaScript Slider</h1>
+	  <img name="slide" width="400"   height="200" />
+	</section>
+
+	<script>
+		var i = 0; // Start point
+		var images = [];
+		var time = 3000;
+
+		// Image List
+		images[0] = 'https://cdn.pixabay.com/photo/2015/07/05/10/18/tree-832079_960_720.jpg';
+		images[1] = 'https://cdn.pixabay.com/photo/2017/01/03/22/53/sunrise-1950873_960_720.jpg';
+		images[2] = 'https://cdn.pixabay.com/photo/2017/02/22/20/02/landscape-2090495_960_720.jpg';
+
+
+		// Change Image
+		function changeImg() {
+			document.slide.src = images[i];
+		
+			if (i < images.length -1) {
+				i++;
+			} else {
+				i = 0;
+			}
+		
+			setTimeout("changeImg()", time);
+
+		}
+
+		window.onload = changeImg;
+	</script>
+</body>
+</html>
